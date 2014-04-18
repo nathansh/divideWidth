@@ -11,32 +11,32 @@
 	var dw = {
 
 		defaults: {
-       selector: '.item'
+			 selector: '.item'
 		},
 		settings: false,
 		items: false,
 
 		init: function(that) {
-		  return $(that).each(function(index) {		    
-		    dw.items = $(this).find(dw.settings.selector);
-		    dw.sizeItems();
-		  });
+			return $(that).each(function(index) {				
+				dw.items = $(this).find(dw.settings.selector);
+				dw.sizeItems();
+			});
 		}, // init
 		
 		sizeItems: function() {
-		  dw.items.css('width', 100 / dw.items.length + "%");
+			dw.items.css('width', 100 / dw.items.length + "%");
 		}, // sizeItems
 		
 		methods: {
 
-		  refresh: function() {
-        dw.sizeItems();
-		  }, // refresh
-		  
-		  kill: function() {
-		    dw.items.css('width', '');
-		  } // kill
-		  
+			refresh: function() {
+				dw.sizeItems();
+			}, // refresh
+			
+			kill: function() {
+				dw.items.css('width', '');
+			} // kill
+			
 		} // methods
 
 	}; // dw
