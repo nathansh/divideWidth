@@ -11,7 +11,9 @@
 	var dw = {
 
 		defaults: {
-			 selector: '.item'
+			selector: '.item',
+			plus: 0,
+			minus: 0
 		},
 		settings: false,
 		items: false,
@@ -24,7 +26,17 @@
 		}, // init
 		
 		sizeItems: function() {
-			dw.items.css('width', 100 / dw.items.length + "%");
+			var items = dw.items.length + dw.settings.plus - dw.settings.minus; 
+			var width = 100 / items;
+			dw.items.each(function() {
+				// Check if an item has a span, otherwise just set the width normally
+				if ( $(this).data('divide_width-span') ) {
+					span = $(this).data('divide_width-span');
+					$(this).css('width', width * span + "%");
+				} else {
+					$(this).css('width', width + "%");
+				}
+			}); // each
 		}, // sizeItems
 		
 		methods: {

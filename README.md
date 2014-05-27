@@ -21,3 +21,7 @@ Methods are called by passing them as follows:
 ```javascript
 $('#containing_element').divideWidth('kill');
 ```
+
+## Span multiple widths
+
+You can make an item span the width of multiple columns (my use case is having an absolutely positioned element that spans the width of two items) by adding a `data-divide_width-span` data attribute. For example, `data-divide_width-span=2'.
